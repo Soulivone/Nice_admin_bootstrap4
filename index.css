@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* header */
+.logo {
+    line-height: 1;
+    width: 280px;
+}
+
+.container-fluid {
+    z-index: 997;
+    height: 60px;
+    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+    background-color: #fff;
+    padding-left: 20px;
+}
+
+/* Seach-bar */
+.search-bar {
+    width: 360px;
+    height: 37px;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="text"]:focus {
+    border: none;
+    outline: none;
+    width: 275px;
+}
+
+button[type="submit"] {
+    border: none;
+    background-color: white;
+    margin-left: 10px;
+}
+
+.link-group {
+    border: 1px solid #CCD4E2;
+    border-radius: 3px;
+    padding: 4px 15px 4px 6.5px;
+    width: 320px;
+}
+
+
+/* nav account */
+.account {
+    height: 52px;
+}
