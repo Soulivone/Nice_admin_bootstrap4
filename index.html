@@ -11,14 +11,14 @@
     <title>NiceAdmin</title>
 </head>
 <body>
-    <header class="container-fluid fixed-top d-flex align-items-center">
+    <header class="header fixed-top d-flex align-items-center">
         
-        <div class="d-flex align-items-center justify-content-between" >
+        <div class="brand d-flex align-items-center justify-content-between" >
             <a href="index.html" class="logo d-flex align-items-center">
                 <img src="logo.png">
                 <span class="d-none d-lg-block">NiceAdmin</span>
             </a>
-            <i class="bi bi-list toggle-sidebar-btn"></i>
+            <a href="#"><i class="i-list bi bi-list toggle-sidebar-btn"></i></a>
         </div>
 
         <div class="search-bar d-flex justify-content-center">
@@ -28,14 +28,25 @@
             </form>
         </div>
 
-        <nav class="account d-flex align-items-center ml-auto">
-            <div class="notification">
-                <i class="bi bi-bell"></i>
+        <nav class="account d-flex align-items-center ml-auto text-center">
+            <a href="#" class="search">
+                <i class="search bi-search"></i>
+            </a>
+            <a href="#" class="notification">
+                <i class="i-bell bi bi-bell align-items-center"></i>
+                <span class="badge-bell bg-primary badge-number text-white text-center ">4</span>
+            </a>
+            <a href="#" class="message">
+                <i class="i-chat-left bi bi-chat-left-text"></i>
+                <span class="badge-chat-left bg-success badge-number text-white text-center">3</span>
+            </a>
+            <div class="media-profile d-flex justify-content-center align-items-center">
+                <img src="profile-img.jpg" class="rounded-circle align-items-center" alt="...">
+                <div class="media-body-profile text-center">
+                  <a href="#">K. Anderson <i class="bi bi-caret-down-fill"></i></a>
+                </div>
             </div>
-            <div class="message">
-                Check
-            </div>
-            
+
         </nav>
 
     </header>
