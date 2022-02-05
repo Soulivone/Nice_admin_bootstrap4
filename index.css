@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
+html {
+    scrollbar-width: thin;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -9,6 +13,7 @@
 
 body {
     font-family: "Open Sans", sans-serif;
+    height: 100vh;
 }
 
 .bi {
@@ -68,9 +73,11 @@ body {
     padding-left: 20px;
 }
 
+
 .header .brand .i-list{
     font-size: 32px;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 /* Seach-bar */
@@ -80,7 +87,14 @@ body {
     font-size: 14px;
 }
 
-input[type="text"],
+input[type="text"]{
+    border: none;
+    outline: none;
+    width: 275px;
+    color: #012970;
+    font-weight: 100;
+}
+
 input[type="text"]:focus {
     border: none;
     outline: none;
@@ -215,18 +229,15 @@ button[type="submit"] {
     }
 }
 
-
 .side-bar .sidebar-nav {
-    margin-top: 60px;
     width: 300px;
     height: 100%;
     padding: 20px;
     position: absolute;
     left: -300px;
-    transition: left .4s;
-    overflow: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #aab7cf transparent;
+    transition: all 0.3s;
+    background-color: #fff;
+    box-shadow: 4px 0px 9px -1px rgba(1, 41, 112, 0.1);
 }
 
 .side-bar .active {
@@ -247,6 +258,7 @@ button[type="submit"] {
     color: #012970;
     margin-bottom: 5px;
     align-items: center;
+    cursor: pointer;
 }
 
 .side-item-active {
@@ -259,18 +271,29 @@ button[type="submit"] {
     background: #f6f9ff;
     border-radius: 4px;
     align-items: center;
+    cursor: pointer;
+    transition: all 0.4s;
 }
 
 .side-item-active .bi-icon {
     margin-right: 10px;
     font-size: 16px;
+    color: #4154f1;
 }
 
 .side-item:hover {
     list-style-type: none;
     color: #4154f1;
     background: #f6f9ff;
-    transition: 0.3s all;
+    transition: all 0.2s;
+    border-radius: 4px;
+}
+
+.side-item:hover i {
+    list-style-type: none;
+    color: #4154f1;
+    background: #f6f9ff;
+    transition: all 0.2s;
     border-radius: 4px;
 }
 
@@ -280,32 +303,28 @@ button[type="submit"] {
     color: #899bbd;
 }
 
-.side-item .bi-chevron {
+.side-item .bi {
     color: #899bbd;
     font-size: 16px;
-}
-
-.side-item .bi-chevron:hover {
-    color: #4154f1;
-}
-
-
-/* .side-item .bi-icon:hover {
-    list-style-type: none;
-    color: #4154f1;
-    background: #f6f9ff;
-    transition: 15s all;
-} */
-
-.side-item .bi-icon::before:hover {
-    list-style-type: none;
-    color: #4154f1;
-    background: #f6f9ff;
-    transition: 0.3s all;
+    margin-left: auto;
 }
 
 .side-text {
     font-size: 11px;
     color: #899bbd;
-    padding: 10px 0px 5px 15px;
+    padding: 5px 0px 5px 15px;
+}
+
+.text-test {
+    width: 100%;
+    padding: 20px 30px;
+    margin-top: 60px;
+    background-color: #F6F9FF;
+    height: 100vh;
+}
+
+.text-test.active {
+    margin-left: 300px;
+    width: calc(100% - 300px);
+    transition: all 0.5s;
 }
