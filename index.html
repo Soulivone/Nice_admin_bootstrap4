@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
     <link rel="stylesheet" href="index.css">
     <title>NiceAdmin</title>
 </head>
@@ -24,7 +25,7 @@
         <div class="search-bar d-flex justify-content-center">
             <form action="#" class="link-group d-flex align-items-center">
                 <input type="text" placeholder="Search" name="search">
-                <button type="submit"><i class="bi bi-search"></i></button>
+                <button type="submit"><i class="bi bi-search" style="cursor: pointer;"></i></button>
             </form>
         </div>
 
@@ -49,162 +50,495 @@
         </nav>
 
     </header>
+            
+        <asid class="side-bar">
+            <ul class="sidebar-nav">
+                <li class="side-item-active d-flex">
+                    <i class="bi-icon bi-grid"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="side-item d-flex">
+                    <i class="bi-icon bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down"></i>
+                </li>
+                <li class="side-item d-flex">
+                    <i class="bi-icon bi-journal-text"></i>
+                    <span>Forms</span>
+                    <i class="bi bi-chevron-down"></i>
+                </li>
+                <li class="side-item d-flex">
+                    <i class="bi-icon bi-layout-text-window-reverse"></i>
+                    <span>Tables</span>
+                    <i class="bi bi-chevron-down"></i>
+                </li>
+                <li class="side-item d-flex">
+                    <i class="bi-icon bi-bar-chart"></i>
+                    <span>Charts</span>
+                    <i class="bi bi-chevron-down"></i>
+                </li>
+                <li class="side-item d-flex">
+                    <i class="bi-icon bi-gem"></i>
+                    <span>Icons</span>
+                    <i class="bi bi-chevron-down"></i>
+                </li>
+                <li class="side-text d-flex">
+                    PAGES
+                </li>
+                <li class="side-item d-flex">
+                    <i class="bi-icon bi-person"></i>
+                    <span>Profile</span>
+                </li>
+                <li class="side-item d-flex">
+                    <i class="bi-icon bi-question-circle"></i>
+                    <span>F.A.Q</span>
+                </li>
+                <li class="side-item d-flex">
+                    <i class="bi-icon bi-envelope"></i>
+                    <span>Contact</span>
+                </li>
+                <li class="side-item d-flex">
+                    <i class="bi-icon bi-card-list"></i>
+                    <span>Register</span>
+                </li>
+                <li class="side-item d-flex">
+                    <i class="bi-icon bi-box-arrow-in-right"></i>
+                    <span>Login</span>
+                </li>
+                <li class="side-item d-flex">
+                    <i class="bi-icon bi-dash-circle"></i>
+                    <span>Error 404</span>
+                </li>
+                <li class="side-item d-flex">
+                    <i class="bi-icon bi-file-earmark"></i>
+                    <span>Blank</span>
+                </li>
 
-    <asid class="side-bar">
-        <ul class="sidebar-nav">
-            <li class="side-item-active d-flex">
-                <i class="bi-icon bi-grid"></i>
-                <span>Dashboard</span>
-            </li>
-            <li class="side-item d-flex">
-                <i class="bi-icon bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down"></i>
-            </li>
-            <li class="side-item d-flex">
-                <i class="bi-icon bi-journal-text"></i>
-                <span>Forms</span>
-                <i class="bi bi-chevron-down"></i>
-            </li>
-            <li class="side-item d-flex">
-                <i class="bi-icon bi-layout-text-window-reverse"></i>
-                <span>Tables</span>
-                <i class="bi bi-chevron-down"></i>
-            </li>
-            <li class="side-item d-flex">
-                <i class="bi-icon bi-bar-chart"></i>
-                <span>Charts</span>
-                <i class="bi bi-chevron-down"></i>
-            </li>
-            <li class="side-item d-flex">
-                <i class="bi-icon bi-gem"></i>
-                <span>Icons</span>
-                <i class="bi bi-chevron-down"></i>
-            </li>
-            <li class="side-text d-flex">
-                PAGES
-            </li>
-            <li class="side-item d-flex">
-                <i class="bi-icon bi-person"></i>
-                <span>Profile</span>
-            </li>
-            <li class="side-item d-flex">
-                <i class="bi-icon bi-question-circle"></i>
-                <span>F.A.Q</span>
-            </li>
-            <li class="side-item d-flex">
-                <i class="bi-icon bi-envelope"></i>
-                <span>Contact</span>
-            </li>
-            <li class="side-item d-flex">
-                <i class="bi-icon bi-card-list"></i>
-                <span>Register</span>
-            </li>
-            <li class="side-item d-flex">
-                <i class="bi-icon bi-box-arrow-in-right"></i>
-                <span>Login</span>
-            </li>
-            <li class="side-item d-flex">
-                <i class="bi-icon bi-dash-circle"></i>
-                <span>Error 404</span>
-            </li>
-            <li class="side-item d-flex">
-                <i class="bi-icon bi-file-earmark"></i>
-                <span>Blank</span>
-            </li>
+            </ul>
+        </asid>
 
-        </ul>
-    </asid>
 
-    <!-- <section>
-        <div>
-            check
-        </div>
-    </section> -->
-    <article class="main-body">
-        
-        <div class="breadcrumb-main">
-            <h1>Dashboard</h1>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active"><a href="#">Dashboard</a></li>
-            </ol>
-        </div>
-        
-        <section class="main-section">
-
-            <div class="row">
-                <div class="col-xl-4 col-md-6">
-                    <div class="card-main">
-                        <div class="card-title">
-                            <span">Sales</span>
-                            <span">| Today</span>
-                        </div>
-                        <div class="card-body d-flex">
-                            <div class="card-icon rounded-circle d-flex justify-content-center align-items-center">
-                                <i class="bi bi-cart" style="color: #4154f1;"></i>
-                            </div>
-                            <div class="card-body-text pl-3">
-                                <h3 class="mt-1">145</h3>
-                                <div class="d-flex mt-1">
-                                    <span class="text-success small">12%</span>
-                                    <span class="text-muted small pl-2">increase</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <article class="main-body">
+            
+                <div class="breadcrumb-main">
+                    <h1>Dashboard</h1>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active"><a href="#">Dashboard</a></li>
+                    </ol>
                 </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="card-main">
-                        <div class="card-title">
-                            <span">Sales</span>
-                            <span">| Today</span>
-                        </div>
-                        <div class="card-body d-flex">
-                            <div class="card-icon rounded-circle d-flex justify-content-center align-items-center">
-                                <i class="bi bi-cart" style="color: #4154f1;"></i>
-                            </div>
-                            <div class="card-body-text pl-3">
-                                <h3 class="mt-1">145</h3>
-                                <div class="d-flex mt-1">
-                                    <span class="text-success small">12%</span>
-                                    <span class="text-muted small pl-2">increase</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div class="card-main">
-                        <div class="card-title">
-                            <span">Sales</span>
-                            <span">| Today</span>
-                        </div>
-                        <div class="card-body d-flex">
-                            <div class="card-icon rounded-circle d-flex justify-content-center align-items-center">
-                                <i class="bi bi-cart" style="color: #4154f1;"></i>
-                            </div>
-                            <div class="card-body-text pl-3">
-                                <h3 class="mt-1">145</h3>
-                                <div class="d-flex mt-1">
-                                    <span class="text-success small">12%</span>
-                                    <span class="text-muted small pl-2">increase</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
 
-        </section>
-    
-    </article>
+                <section class="main-section">
+                    <div class="row-main d-flex flex-wrap">
 
-    
+                        <div class="col-xl-8 col-md-12 col-sm-12">
+                            <div class="row">
+
+                                <div class="col-xl-4 col-md-6 col-sm-12 col-12">
+                                    <div class="card">
+                                        <div class="card-title">
+                                            Sales
+                                            <span>| Today</span>
+                                            <div class="icon-dots">
+                                                <a href="#"><i class="bi-dots bi-three-dots"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="card-body d-flex">
+                                            <div class="card-icon rounded-circle d-flex justify-content-center  align-items-center" style="background-color: #f6f6fe;">
+                                                <i class="bi bi-cart" style="color: #4154f1;"></i>
+                                            </div>
+                                            <div class="card-body-text pl-3">
+                                                <h3 class="mt-1">145</h3>
+                                                <div class="d-flex">
+                                                    <span class="text-success small">12%</span>
+                                                    <span class="text-muted small pl-2">increase</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-md-6 col-sm-12 col-12">
+                                    <div class="card">
+                                        <div class="card-title">
+                                            Revenue
+                                            <span>| This Month</span>
+                                            <<div class="icon-dots">
+                                                <a href="#"><i class="bi-dots bi-three-dots"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="card-body d-flex">
+                                            <div class="card-icon rounded-circle d-flex justify-content-center  align-items-center" style="background-color: #e0f8e9;">
+                                                <i class="bi bi-currency-dollar" style="color: #2eca6a; "></i>
+                                            </div>
+                                            <div class="card-body-text pl-3">
+                                                <h3 class="mt-1">$3,264</h3>
+                                                <div class="d-flex">
+                                                    <span class="text-success small">8%</span>
+                                                    <span class="text-muted small pl-2">increase</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4 col-md-12 col-sm-12 col-12">
+                                    <div class="card">
+                                        <div class="card-title">
+                                            Customers
+                                            <span>| This Year</span>
+                                            <div class="icon-dots">
+                                                <a href="#"><i class="bi-dots bi-three-dots"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="card-body d-flex">
+                                            <div class="card-icon rounded-circle d-flex justify-content-center  align-items-center" style="background-color: #ffecdf;">
+                                                <i class="bi bi-people" style="color: #ff771d;"></i>
+                                            </div>
+                                            <div class="card-body-text pl-3">
+                                                <h3 class="mt-1">1244</h3>
+                                                <div class="d-flex">
+                                                    <span class="text-danger small">12%</span>
+                                                    <span class="text-muted small pl-2">decrease</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-12">
+                                    <div class="card d-block">
+                                        <div class="card-title">
+                                            Resport
+                                            <span>/Today</span>
+                                            <<div class="icon-dots">
+                                                <a href="#"><i class="bi-dots bi-three-dots"></i></a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="table-body" id="dataTable">
+
+                                            <div class="body-line-chart">
+                                                <canvas id="line-chart"></canvas>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-12">
+                                    <div class="card d-block">
+                                        <div class="card-title">
+                                            Recent Sales
+                                            <span>| Today</span>
+                                            <div class="icon-dots">
+                                                <a href="#"><i class="bi-dots bi-three-dots"></i></a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="table-body" id="dataTable">
+
+                                            <div class="body-container ">
+                                                <table id="table-recent" style="width: 100%;" class="dataTable">
+                                                    <thead class="thead" style="background-color: #f6f6fe;">
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Customers</th>
+                                                            <th>Product</th>
+                                                            <th>Price</th>
+                                                            <th>Status</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody class="table table-borderless">
+                                                        <tr>
+                                                            <th>#2457</th>
+                                                            <td>Brandon Jacob</td>
+                                                            <td class="text-primary">At praesentium minu</td>
+                                                            <td>$64</td>
+                                                            <td><span class="badge bg-success text-white">Approved</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>#2147</th>
+                                                            <td>Bridie Kessler</td>
+                                                            <td class="text-primary">Blanditiis dolor omnis similique</td>
+                                                            <td>$47</td>
+                                                            <td><span class="badge bg-warning text-white">Pending</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>#2049</th>
+                                                            <td>Ashleigh Langosh</td>
+                                                            <td class="text-primary">At recusandae consectetur</td>
+                                                            <td>$147</td>
+                                                            <td><span class="badge bg-success text-white">Approved</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>#2644</th>
+                                                            <td>Angus Grady</td>
+                                                            <td class="text-primary">Ut voluptatem id earum et</td>
+                                                            <td>$67</td>
+                                                            <td><span class="badge bg-danger text-white">Rejected</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>#2644</th>
+                                                            <td>Raheem Lehner</td>
+                                                            <td class="text-primary">Sunt similique distinctio</td>
+                                                            <td>$165</td>
+                                                            <td><span class="badge bg-success text-white">Approved</span></td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                    
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-12">
+                                    <div class="card d-block">
+                                        <div class="card-title">
+                                            Top Selling
+                                            <span>| Today</span>
+                                            <div class="icon-dots">
+                                                <a href="#"><i class="bi-dots bi-three-dots"></i></a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="table-body" id="dataTable">
+                                            <div class="body-container">
+                                                <table id="table-selling" class="dataTable no-footer">
+                                                    <thead class="thead" style="background-color: #f6f6fe;">
+                                                        <tr>
+                                                            <th>Preview</th>
+                                                            <th>Product</th>
+                                                            <th>Price</th>
+                                                            <th>Sold</th>
+                                                            <th>Revenue</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody class="table table-borderless">
+                                                        <tr>
+                                                            <th><img src="product-1.png" alt=""></th>
+                                                            <td class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</td>
+                                                            <td>$64</td>
+                                                            <td class="fw-bold">124</td>
+                                                            <td>$5,828</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th><img src="product-2.png" alt=""></th>
+                                                            <td class="text-primary fw-bold">Exercitationem similique doloremque</td>
+                                                            <td>$49</td>
+                                                            <td class="fw-bold">98</td>
+                                                            <td>$4,508</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th><img src="product-3.png" alt=""></th>
+                                                            <td class="text-primary fw-bold">Doloribus nisi exercitationem</td>
+                                                            <td>$59</td>
+                                                            <td class="fw-bold">74</td>
+                                                            <td>$4,366</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th><img src="product-4.png" alt=""></th>
+                                                            <td class="text-primary fw-bold">Officiis quaerat sint rerum error</td>
+                                                            <td>$32</td>
+                                                            <td class="fw-bold">63</td>
+                                                            <td>$2,016</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th><img src="product-5.png" alt=""></th>
+                                                            <td class="text-primary fw-bold">Sit unde debitis delectus repellendus</td>
+                                                            <td>$79</td>
+                                                            <td class="fw-bold">41</td>
+                                                            <td>$3,239</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                    
+                                                </table>
+                                            </div>
+                                        </div>
+                                                                                    
+                                          
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-md-12 col-sm-12 p-0">
+
+                                <div class="col-12">
+                                    <div class="card-col-xl-4">
+                                        <div class="card-title">
+                                            Recent Activity
+                                            <span>| To day</span>
+                                            <div class="icon-dots">
+                                                <a href="#"><i class="bi-dots bi-three-dots"></i></a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="activity">
+                                            <div class="activity-item d-flex">
+                                              <div class="activite-label">32 min</div>
+                                              <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                                              <div class="activity-content">
+                                                Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo officiis</a> beatae
+                                              </div>
+                                            </div>
+                            
+                                            <div class="activity-item d-flex">
+                                              <div class="activite-label">56 min</div>
+                                              <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
+                                              <div class="activity-content">
+                                                Voluptatem blanditiis blanditiis eveniet
+                                              </div>
+                                            </div>
+                            
+                                            <div class="activity-item d-flex">
+                                              <div class="activite-label">2 hrs</div>
+                                              <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
+                                              <div class="activity-content">
+                                                Voluptates corrupti molestias voluptatem
+                                              </div>
+                                            </div>
+                            
+                                            <div class="activity-item d-flex">
+                                              <div class="activite-label">1 day</div>
+                                              <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
+                                              <div class="activity-content">
+                                                Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati voluptatem</a> tempore
+                                              </div>
+                                            </div>
+                            
+                                            <div class="activity-item d-flex">
+                                              <div class="activite-label">2 days</div>
+                                              <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
+                                              <div class="activity-content">
+                                                Est sit eum reiciendis exercitationem
+                                              </div>
+                                            </div>
+                            
+                                            <div class="activity-item d-flex">
+                                              <div class="activite-label">4 weeks</div>
+                                              <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
+                                              <div class="activity-content">
+                                                Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="card-col-xl-4">
+                                        <div class="card-title">
+                                            Budget Report
+                                            <span>| This Month</span>
+                                            <div class="icon-dots">
+                                                <a href="#"><i class="bi-dots bi-three-dots"></i></a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="chart-body">
+                                            <canvas id="radar-chart"></canvas>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="card-col-xl-4">
+                                        <div class="card-title">
+                                            Budget Report
+                                            <span>| This Month</span>
+                                            <div class="icon-dots">
+                                                <a href="#"><i class="bi-dots bi-three-dots"></i></a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="chart-body">
+                                            <canvas id="doughnut-chart"></canvas>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="card-col-xl-4">
+                                        <div class="card-title">
+                                            News & Updates
+                                            <span>| Today</span>
+                                            <div class="icon-dots">
+                                                <a href="#"><i class="bi-dots bi-three-dots"></i></a>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="card-new">
+                                            <img class="card-img-top" src="news-1.jpg" alt="new-1">
+                                            <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
+                                            <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
+                                        </div>
+
+                                        <div class="card-new">
+                                            <img class="card-img-top" src="news-2.jpg" alt="new-2">
+                                            <h4><a href="#">Quidem autem et impedit</a></h4>
+                                            <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
+                                        </div>
+
+                                        <div class="card-new">
+                                            <img class="card-img-top" src="news-3.jpg" alt="new-3">
+                                            <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
+                                            <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
+                                        </div>
+
+                                        <div class="card-new">
+                                            <img class="card-img-top" src="news-4.jpg" alt="new-4">
+                                            <h4><a href="#">Laborum corporis quo dara net para</a></h4>
+                                            <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
+                                        </div>
+
+                                        <div class="card-new">
+                                            <img class="card-img-top" src="news-5.jpg" alt="new-5">
+                                            <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
+                                            <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>
+                                        </div>
+                                        
+
+                                    </div>
+                                </div>
+
+                        </div>
+
+                        <footer class="footer">
+
+                            <div class="footer-top">
+                                &copy; Copyright <strong style="color: #012970;">NiceAdmin</strong>. All Rights Reserved
+                            </div>
+                            <div class="footer-bottom">
+                                Designed by <span style="color: #4154f1;">BootstrapMade</span>
+                            </div>
+
+                        </footer>
+
+                    </div>
+                </section>
+
+        </article>
     
     
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="index.js"></script>
+    <script src="dataTable.js"></script>
+    <script src="chart.js"></script>
+    
+    
 </body>
 </html>
