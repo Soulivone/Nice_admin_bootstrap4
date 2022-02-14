@@ -590,7 +590,7 @@ table#table-recent .badge {
 }
 
 
-#dataTable{
+.table-body {
     overflow: auto;
 }
 
